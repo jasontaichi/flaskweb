@@ -14,7 +14,7 @@
 
 # [START gae_flex_python_static_files]
 import logging
-import random
+
 from flask import Flask, render_template
 
 
@@ -23,10 +23,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello():
-    if random.randint(0,99) > 50:
-        return render_template('indexA.html')
-    else:
-        return render_template('indexB.html')
+    return render_template('index.html')
 
 
 @app.errorhandler(500)
